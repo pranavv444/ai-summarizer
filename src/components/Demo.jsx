@@ -44,6 +44,13 @@ const Demo = () => {
     navigator.clipboard.writeText(copyurl);
     setTimeout(()=>setCopied(false),2000);
   }
+  const handleDelete = (urlToDelete) => {
+    const updatedAllArticles = allArticles.filter(
+      (article) => article.url !== urlToDelete
+    );
+    setAllArticles(updatedAllArticles);
+    localStorage.setItem("articles", JSON.stringify(updatedAllArticles));
+  };
 
   return (
     <section className="mt-16 w-full max-w-xl">
@@ -90,6 +97,7 @@ const Demo = () => {
               <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm-truncate">
                 {item.url}
               </p>
+              <button className="delete_btn text-red-500 ml-4" onClick={()=>handleDelete(item.url)}>Delete</button>
             </div>
           ))}
         </div>
