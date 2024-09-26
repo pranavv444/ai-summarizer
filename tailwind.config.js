@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      santoshi: ['Santoshi', 'sans-serif'],
+      satoshi: ['Satoshi', 'sans-serif'],
       inter: ['Inter', 'sans-serif'],
     },
   },
